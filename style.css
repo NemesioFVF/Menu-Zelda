@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Atomic Age', cursive;
+}
+
+body{
+    background: linear-gradient(rgba(119, 114, 114, 0.5), rgba(0, 0, 0, 0.5)), url(imgs/1234.jpg);
+    background-repeat:repeat-y;
+    background-size:100%;
+    background-color: black;
+    background-attachment:fixed;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+}
+
+div p {
+    position: fixed;
+    z-index: 2;
+    color: rgba(194, 164, 65, 0.637);
+    display: flex;
+    margin-top: 2%;
+    font-size: 8em;
+    text-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0)
+}
+
+.theZelda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: 0.5s;
+}
+
+.sci{
+    position: relative;
+    display: flex;
+}
+
+.sci li {
+    list-style: none;
+    width: 250px;
+    height: 494px;
+    margin: 25px 105px;
+}
+
+.sci li::before {
+    content: attr(data-text);
+    position: absolute;
+    top:80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 9vw;
+    pointer-events: none;
+    font-weight: 700;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.sci li:hover:before {
+    opacity: 0.1;
+    transform: translate(-50%, calc(-50% + 180px));
+    color: rgb(255, 255, 255);
+}
+
+.sci li a {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+    height: 494px;
+    background: rgba(255, 255, 255, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25%;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 4em;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0);
+    transform: background 0.25s;
+    border-bottom-right-radius: 11%;
+    border-bottom-left-radius: 11%;
+}
+
+.js-tilt-glare {
+    border-radius: 40%;
+    width: 239px !important;
+    height: 469px !important;
+    margin: 5% 2.9% !important;
+    border-bottom-right-radius: 9%;
+    border-bottom-left-radius: 9.9%;
+}
+
+.sci li a:hover.link{
+    background: linear-gradient(rgba(103, 14, 0, 0), rgba(103, 14, 0, 0)), url(imgs/link.png);
+    background-repeat:no-repeat;
+    background-size:100%;
+}
+
+.sci li a:hover.zelda{
+    background: linear-gradient(rgba(103, 14, 0, 0), rgba(103, 14, 0, 0)), url(imgs/zelda.png);
+    background-repeat:no-repeat;
+    background-size:100%;
+}
+
+
+.sci li a:hover.ganondorf{
+     background: linear-gradient(rgba(103, 14, 0, 0), rgba(103, 14, 0, 0)), url(imgs/ganondorf.png);
+     background-repeat:no-repeat;
+     background-size:100%;  
+}
+
+.sci li a .fa{
+    transform: 0.25s;
+    pointer-events: none;
+}
+
+.sci li a:hover .fa{
+    transform: scale(1) translateZ(50px);
+
+}

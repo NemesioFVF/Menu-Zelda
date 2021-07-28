@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Atomic+Age&display=swap" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title> Zelda</title>
+
+</head>
+
+<body>
+
+     <div><p>The Legend of Zelda</p></div>
+    
+    <section class="theZelda">
+
+        <ul class="sci">
+
+            <li data-text="Link" data-color="rgba(93, 101, 50, 0.568)">
+                <a href="#" class="link">
+                    <img class="fa" src="imgs/link2.png">
+                </a>
+            </li>
+
+            <li data-text="Zelda" data-color="rgba(0, 62, 99, 0.568)">
+                <a href="#" class="zelda">
+                    <img class="fa" src="imgs/zelda2.png">
+                </a>
+            </li>
+
+            <li data-text="Ganondorf" data-color="rgba(103, 14, 0, 0.568)">
+                <a href="#" class="ganondorf">
+                    <img class="fa" src="imgs/ganondorf2.png">
+                </a>
+            </li>
+
+        </ul>
+        
+    </section>
+
+    <script src="vanilla-tilt.min.js"></script>
+    <script>
+
+        VanillaTilt.init(document.querySelectorAll(".sci li a"), {
+                max: 25,
+                speed: 400,
+                glare: true,
+                "max-glare": 1,
+                
+            });
+
+
+        let list = document.querySelectorAll('.sci li');
+        let bg = document.querySelector('.theZelda');
+
+        list.forEach(elements => {
+            elements.addEventListener('mouseenter', function(event){
+                let color = event.target.getAttribute('data-color');
+                bg.style.backgroundColor = color;
+            })
+
+            elements.addEventListener('mouseleave', function(event){
+                
+                bg.style.backgroundColor = '';
+            })
+        })
+   
+    </script>
+
+</body>
+
+</html>
